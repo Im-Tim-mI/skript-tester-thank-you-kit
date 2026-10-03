@@ -1,0 +1,226 @@
+# ------------------------------------------------------------
+#  skript-tester-thank-you-kit (English edition)
+#  https://github.com/Im-Tim-mI/skript-tester-thank-you-kit
+#  Copyright (c) 2026 廷廷小教室、廷廷的家（Tim945）
+#  License: MIT + Commons Clause (see LICENSE)
+# ------------------------------------------------------------
+
+# ============================================
+# 2026/4/27 Tester Thank-You Kit
+# Full netherite set + elytra + chestplate + thank-you medal
+# ============================================
+
+options:
+    prefix: &6[&eThank-You Kit&6]
+    armor_name: &6&l2026/4/27 Tester Thank-You Kit
+    medal_name: &6&l2026/4/27 Tester Thank-You Medal
+
+# ============================================
+# Give the thank-you kit
+# ============================================
+command /givethankskit [<player>]:
+    permission: op
+    trigger:
+        if arg-1 is set:
+            giveThankYouGear(arg-1)
+            send "{@prefix} &aGave the thank-you kit to &e%arg-1%&a!" to player
+        else:
+            loop all players:
+                giveThankYouGear(loop-player)
+            send "{@prefix} &aGave the thank-you kit to &e%size of all players% &aplayers!" to player
+
+# ============================================
+# Function: give the gear
+# ============================================
+function giveThankYouGear(p: player):
+    # ======== Netherite helmet ========
+    set {_helmet} to netherite helmet named "{@armor_name}"
+    set lore of {_helmet} to "&7Thank you for helping us test!" and "&7Date: 2026/4/27" and "" and "&e✦ Every enchantment, max level ✦"
+    enchant {_helmet} with protection 4
+    enchant {_helmet} with fire protection 4
+    enchant {_helmet} with blast protection 4
+    enchant {_helmet} with projectile protection 4
+    enchant {_helmet} with respiration 3
+    enchant {_helmet} with aqua affinity 1
+    enchant {_helmet} with thorns 3
+    enchant {_helmet} with unbreaking 3
+    enchant {_helmet} with mending 1
+    give {_helmet} to {_p}
+
+    # ======== Netherite chestplate ========
+    set {_chestplate} to netherite chestplate named "{@armor_name}"
+    set lore of {_chestplate} to "&7Thank you for helping us test!" and "&7Date: 2026/4/27" and "" and "&e✦ Every enchantment, max level ✦"
+    enchant {_chestplate} with protection 4
+    enchant {_chestplate} with fire protection 4
+    enchant {_chestplate} with blast protection 4
+    enchant {_chestplate} with projectile protection 4
+    enchant {_chestplate} with thorns 3
+    enchant {_chestplate} with unbreaking 3
+    enchant {_chestplate} with mending 1
+    give {_chestplate} to {_p}
+
+    # ======== Elytra ========
+    set {_elytra} to elytra named "{@armor_name}"
+    set lore of {_elytra} to "&7Thank you for helping us test!" and "&7Date: 2026/4/27" and "" and "&e✦ Every enchantment, max level ✦"
+    enchant {_elytra} with protection 4
+    enchant {_elytra} with fire protection 4
+    enchant {_elytra} with blast protection 4
+    enchant {_elytra} with projectile protection 4
+    enchant {_elytra} with thorns 3
+    enchant {_elytra} with unbreaking 3
+    enchant {_elytra} with mending 1
+    give {_elytra} to {_p}
+
+    # ======== Netherite leggings ========
+    set {_leggings} to netherite leggings named "{@armor_name}"
+    set lore of {_leggings} to "&7Thank you for helping us test!" and "&7Date: 2026/4/27" and "" and "&e✦ Every enchantment, max level ✦"
+    enchant {_leggings} with protection 4
+    enchant {_leggings} with fire protection 4
+    enchant {_leggings} with blast protection 4
+    enchant {_leggings} with projectile protection 4
+    enchant {_leggings} with thorns 3
+    enchant {_leggings} with unbreaking 3
+    enchant {_leggings} with mending 1
+    enchant {_leggings} with swift sneak 3
+    give {_leggings} to {_p}
+
+    # ======== Netherite boots ========
+    set {_boots} to netherite boots named "{@armor_name}"
+    set lore of {_boots} to "&7Thank you for helping us test!" and "&7Date: 2026/4/27" and "" and "&e✦ Every enchantment, max level ✦"
+    enchant {_boots} with protection 4
+    enchant {_boots} with fire protection 4
+    enchant {_boots} with blast protection 4
+    enchant {_boots} with projectile protection 4
+    enchant {_boots} with feather falling 4
+    enchant {_boots} with thorns 3
+    enchant {_boots} with depth strider 3
+    enchant {_boots} with soul speed 3
+    enchant {_boots} with frost walker 2
+    enchant {_boots} with unbreaking 3
+    enchant {_boots} with mending 1
+    give {_boots} to {_p}
+
+    # ======== Thank-you medal (nether star) ========
+    set {_medal} to nether star named "{@medal_name}"
+    set lore of {_medal} to "&7Thank you for helping us test!" and "&7Date: 2026/4/27" and "" and "&d✦ A keepsake forever ✦"
+    give {_medal} to {_p}
+
+    # Tell the player
+    send "" to {_p}
+    send "&6&l✦═══════════════════════════════✦" to {_p}
+    send "&e&l     Thank you for testing!" to {_p}
+    send "&6&l✦═══════════════════════════════✦" to {_p}
+    send "" to {_p}
+    send "&7You received the following items:" to {_p}
+    send "&f  - &bNetherite Helmet &7(all enchantments + Mending)" to {_p}
+    send "&f  - &bNetherite Chestplate &7(all enchantments + Mending)" to {_p}
+    send "&f  - &bElytra &7(all enchantments + Mending)" to {_p}
+    send "&f  - &bNetherite Leggings &7(all enchantments + Swift Sneak + Mending)" to {_p}
+    send "&f  - &bNetherite Boots &7(all enchantments + Soul Speed + Mending)" to {_p}
+    send "&f  - &dThank-You Medal &7(Nether Star)" to {_p}
+    send "" to {_p}
+    send "&eThank you for your contribution to the server!" to {_p}
+    send "&6&l✦═══════════════════════════════✦" to {_p}
+    send "" to {_p}
+
+    # Title + sound
+    send title "&6&lThank you!" with subtitle "&eYour tester thank-you kit has arrived" to {_p} for 3 seconds
+    play sound "UI_TOAST_CHALLENGE_COMPLETE" with volume 1 with pitch 1 to {_p}
+
+# ============================================
+# Recall the thank-you kit (one player)
+# ============================================
+command /recallthankskit [<player>]:
+    permission: op
+    trigger:
+        if arg-1 is set:
+            recallThankYouGear(arg-1)
+            send "{@prefix} &cRecalled &e%arg-1%&c's thank-you kit!" to player
+        else:
+            send "{@prefix} &cUsage: /recallthankskit <player>" to player
+            send "{@prefix} &7Or use /recallallthankskits to recall it from everyone" to player
+
+# ============================================
+# Recall the gear from all players
+# ============================================
+command /recallallthankskits:
+    permission: op
+    trigger:
+        set {_count} to 0
+        loop all players:
+            recallThankYouGear(loop-player)
+            add 1 to {_count}
+        send "{@prefix} &cRecalled the thank-you kit from &e%{_count}% &cplayers!" to player
+
+# ============================================
+# Function: recall the gear
+# ============================================
+function recallThankYouGear(p: player):
+    set {_removed} to 0
+
+    # Check and clear the armor slots
+    if name of helmet of {_p} is "{@armor_name}":
+        set helmet of {_p} to air
+        add 1 to {_removed}
+
+    if name of chestplate of {_p} is "{@armor_name}":
+        set chestplate of {_p} to air
+        add 1 to {_removed}
+
+    if name of leggings of {_p} is "{@armor_name}":
+        set leggings of {_p} to air
+        add 1 to {_removed}
+
+    if name of boots of {_p} is "{@armor_name}":
+        set boots of {_p} to air
+        add 1 to {_removed}
+
+    # Remove kit items and the medal from the inventory
+    loop all items in {_p}'s inventory:
+        if name of loop-item is "{@armor_name}":
+            remove loop-item from {_p}'s inventory
+            add 1 to {_removed}
+        if name of loop-item is "{@medal_name}":
+            remove loop-item from {_p}'s inventory
+            add 1 to {_removed}
+
+    # Tell the player
+    if {_removed} > 0:
+        send "{@prefix} &cYour thank-you kit has been recalled!" to {_p}
+        send "&7Removed &e%{_removed}% &7item(s) in total" to {_p}
+        play sound "ENTITY_ITEM_BREAK" with volume 1 to {_p}
+
+# ============================================
+# See who has the thank-you kit
+# ============================================
+command /checkthankskits:
+    permission: op
+    trigger:
+        send "{@prefix} &ePlayers who have the thank-you kit:" to player
+        set {_count} to 0
+        loop all players:
+            set {_has} to false
+
+            # Check the armor slots
+            if name of helmet of loop-player is "{@armor_name}":
+                set {_has} to true
+            if name of chestplate of loop-player is "{@armor_name}":
+                set {_has} to true
+            if name of leggings of loop-player is "{@armor_name}":
+                set {_has} to true
+            if name of boots of loop-player is "{@armor_name}":
+                set {_has} to true
+
+            # Check the inventory
+            loop all items in loop-player's inventory:
+                if name of loop-item is "{@armor_name}" or "{@medal_name}":
+                    set {_has} to true
+
+            if {_has} is true:
+                add 1 to {_count}
+                send "&7- &a%loop-player%" to player
+
+        if {_count} is 0:
+            send "&7No players have the thank-you kit" to player
+        else:
+            send "&eTotal: &a%{_count}% &eplayers" to player
