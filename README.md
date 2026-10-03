@@ -6,6 +6,18 @@ Thanks your beta testers with a commemorative, fully enchanted netherite set, an
 
 > This repository has two editions of the same script: **繁體中文 (zh-TW)** is the original used on the author's Traditional Chinese server, and **English** is a full translation (commands, messages and variable names) with the same features.
 
+<!-- BEGIN LIVE SCREENSHOTS -->
+
+## Screenshots
+
+![Inventory after receiving the thank-you kit](docs/images/thank-you-kit-inventory.png)
+
+*A throwaway test account right after `/發放感謝套裝`: the full netherite set, an elytra, the commemorative nether star medal and firework rockets.*
+
+> These are live-server captures, not native client screenshots. A headless client logged into a real Paper 26.2 server, triggered the script, and the block / UI data the server sent back was re-rendered using the official Minecraft 26.2 client assets. Mojang/Microsoft image assets are not covered by this repository's code licence.
+
+<!-- END LIVE SCREENSHOTS -->
+
 ## Features
 
 - Netherite helmet, chestplate, leggings and boots plus an elytra, with all protection enchantments, Thorns, Unbreaking, Mending and the matching extras (Respiration, Aqua Affinity, Swift Sneak, Feather Falling, Depth Strider, Soul Speed, Frost Walker)
